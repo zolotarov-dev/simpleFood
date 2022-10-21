@@ -1,0 +1,25 @@
+$accent: #FF6838;
+$default-color: #31352B;
+$darkblue: #363853;
+$white: #FFFFFF;
+$orange: #FF7A50;
+$grey: #ECECEC;
+$dark-grey:#C2C2C2;
+$bright-white: #F9FAFF;
+$dim-white: #FFF2ED;
+$color-text: #0000;
+
+%rubik-300{
+    font-family: 'Rubik-Light';
+    font-weight: 300;
+}
+
+%rubik-400{
+    font-family: 'Rubik-Regular';
+    font-weight: 400;
+}
+
+%rubik-500{
+    font-family: 'Rubik-Medium';
+    font-weight: 500;
+}

@@ -4,6 +4,7 @@ const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
+const svgSprite = require('gulp-svg-sprite');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
@@ -56,6 +57,20 @@ function images(){
     .pipe(dest('dist/images'))
 }
 
+function svgSprites() {
+    return src('app/images/icons/*.svg')
+      .pipe(
+        svgSprite({
+          mode: {
+            stack: {
+              sprite: '../sprite.svg',
+            },
+          },
+        })
+      )
+          .pipe(dest('app/images'));
+  }
+
 function build(){
     return src([
         'app/**/*.html',
@@ -72,6 +87,7 @@ function cleanDist() {
 function watching() {
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+    watch(['app/images/icons/*.svg'], svgSprites);
     watch(['app/**/*.html']).on('change', browserSync.reload);
 }
   
@@ -81,6 +97,7 @@ function watching() {
   exports.watching = watching;
   exports.images = images;
   exports.cleanDist = cleanDist;
+  exports.svgSprites = svgSprites;
   exports.build = series(cleanDist, images, build);
 
-  exports.default = parallel(styles, scripts, browsersync, watching);
+  exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);
