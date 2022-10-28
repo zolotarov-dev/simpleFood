@@ -1,0 +1,110 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 58px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 30px;
+
+    &__lists {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 50px 0 auto;
+        align-items: center;
+    }
+
+    &__item {
+        margin-right: 46px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        border-radius: 5px;
+        transition: box-shadow 0.3s, color 0.3s, text-shadow 0.3s;
+    }
+
+    &__link--active {
+        color: $accent;
+    }
+
+}
+
+.icon-menu {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &__btn {
+        display: block;
+        padding: 22px;
+        position: relative;
+        border-radius: 5px;
+        transition: box-shadow 0.3s, background-color 0.3s, filter 0.1s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 19px;
+            height: 19px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            top: 12px;
+            left: 12px;
+        }
+
+        &:hover::before {
+            filter: invert(100%) sepia(0%) saturate(7492%) hue-rotate(302deg) brightness(108%) contrast(102%);
+        }
+
+        &:active::before {
+            filter: invert(19%) sepia(31%) saturate(581%) hue-rotate(196deg) brightness(98%) contrast(91%);
+        }
+
+        &:hover .icon-menu__num {
+            background-color: $white;
+            color: $orange;
+        }
+
+        &:active .icon-menu__num {
+            background-color: $accent;
+            color: $white;
+        }
+    }
+
+    &__num {
+        position: absolute;
+        min-width: 14px;
+        height: 14px;
+        padding: 2px;
+        border-radius: 50%;
+        background-color: $accent;
+        top: 7px;
+        right: 4px;
+        font-size: 10px;
+        color: $white;
+        text-align: center;
+        line-height: 1;
+    }
+
+
+    .search::before {
+        background-image: url(../images/sprite.svg#icon-search);
+    }
+
+    .cart::before {
+        background-image: url(../images/sprite.svg#icon-cart);
+    }
+
+}

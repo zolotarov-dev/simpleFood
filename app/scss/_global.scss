@@ -3,11 +3,13 @@ body {
     line-height: 1.2;
     color: $default-color;
     background-color: $bright-white;
-    @extend %rubik-400;
+    font-family: 'Rubik';
+    font-weight: 400;
     min-height: 100vh;
 }
 
 .wrapper {
+    padding-top: 160px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -19,8 +21,13 @@ body {
     margin: 0 auto;
 }
 
-.section {
-    margin-bottom: 120px;
+.sticky{
+    background-color: $bright-white;
+    opacity: 0.9;
+}
+
+.indent {
+    padding-bottom: 120px;
 }
 
 .sr-only {
@@ -37,7 +44,8 @@ body {
 }
 
 .title {
-    @extend %rubik-500;
+    font-family: 'Rubik';
+    font-weight: 500;
     font-size: 36px;
     line-height: 1.3;
 }
@@ -46,23 +54,23 @@ body {
     display: block;
     transition: box-shadow 0.3s ease, opacity 0.3s, ;
     border-radius: 5px;
-}
 
-.logo:focus {
-    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+    &:focus {
+        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+    }
 
-}
+    &:hover {
+        opacity: 0.8;
+    }
 
-.logo:hover {
-    opacity: 0.8;
-}
-
-.logo:active {
-    opacity: 0.5;
-    box-shadow: none;
+    &:active {
+        opacity: 0.5;
+        box-shadow: none;
+    }
 }
 
 .btn {
+    display: inline-block;
     padding: 12px 33px;
     background-color: $accent;
     border-radius: 6px;
@@ -70,27 +78,45 @@ body {
     transition: box-shadow 0.3s, color 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
-.btn:focus {
+.btn:focus,
+.restaurants-card__btn:focus {
     box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
     background-color: rgba(255, 122, 80, 0.1);
     color: $accent;
 }
 
-.btn:hover {
+.btn:hover,
+.restaurants-card__btn:hover {
     box-shadow: 0px 5px 12px rgba(255, 104, 56, 0.2), 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
     background-color: $white;
     color: $accent;
+
 }
 
-.btn:active {
+.btn:active,
+.restaurants-card__btn:active {
     background-color: rgba(255, 122, 80, 0.1);
     box-shadow: none;
     color: $accent;
 }
 
+.restaurants-card__btn:focus::before,
+.restaurants-card__btn:hover::before,
+.restaurants-card__btn:active::before {
+    filter: invert(51%) sepia(90%) saturate(2286%) hue-rotate(337deg) brightness(101%) contrast(101%);
+}
+
+.restaurants-card__btn:hover::before {
+    left: 53px;
+}
+
+.restaurants-card__btn:active::before {
+    left: 33px;
+}
+
 .menu__link:focus,
 .hero__link:focus,
-.products__link:focus,
+.popular__more:focus,
 .footer__link:focus {
     box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
     text-decoration: none;
@@ -99,16 +125,20 @@ body {
 
 .menu__link:hover,
 .hero__link:hover,
-.products__link:hover,
+.popular__more:hover,
 .footer__link:hover {
     color: $accent;
     text-decoration: none;
     text-decoration-color: $color-text;
 }
 
+.popular__more:focus {
+    text-decoration: underline;
+}
+
 .menu__link:active,
 .hero__link:active,
-.products__link:active,
+.popular__more:active,
 .footer__link:active {
     text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
     color: $default-color;
@@ -117,23 +147,19 @@ body {
     text-decoration-color: $color-text;
 }
 
-.products__link:focus {
-    text-decoration: underline;
-}
-
-.icon-menu__link:focus,
+.icon-menu__btn:focus,
 .footer__icon-link:focus {
     background-color: rgba(255, 122, 80, 0.1);
     box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
 }
 
-.icon-menu__link:hover,
+.icon-menu__btn:hover,
 .footer__icon-link:hover {
     background-color: $orange;
     box-shadow: none
 }
 
-.icon-menu__link:active,
+.icon-menu__btn:active,
 .footer__icon-link:active {
     background-color: $dim-white;
 }

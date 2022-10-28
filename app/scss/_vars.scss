@@ -8,18 +8,39 @@ $dark-grey:#C2C2C2;
 $bright-white: #F9FAFF;
 $dim-white: #FFF2ED;
 $color-text: #0000;
+$hover-color: #FFAE94;
 
 %rubik-300{
-    font-family: 'Rubik-Light';
+    font-family: 'Rubik';
     font-weight: 300;
 }
 
 %rubik-400{
-    font-family: 'Rubik-Regular';
+    font-family: 'Rubik';
     font-weight: 400;
 }
 
 %rubik-500{
-    font-family: 'Rubik-Medium';
+    font-family: 'Rubik';
     font-weight: 500;
 }
+
+%rubik-italic{
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin line-clamp($lines: 1) {
+    @if $lines <=1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    } @else {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: $lines;
+      -webkit-box-orient: vertical;
+    }
+  }
