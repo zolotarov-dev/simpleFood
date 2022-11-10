@@ -9,6 +9,7 @@ $bright-white: #F9FAFF;
 $dim-white: #FFF2ED;
 $color-text: #0000;
 $hover-color: #FFAE94;
+$line: #EEEFF3;
 
 %rubik-300{
     font-family: 'Rubik';
@@ -43,4 +44,54 @@ $hover-color: #FFAE94;
       -webkit-line-clamp: $lines;
       -webkit-box-orient: vertical;
     }
+  }
+
+  @mixin burger-menu {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    color: $bright-white;
+  
+    &__line {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 2px;
+      background-color: $darkblue;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $darkblue;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+  
+    &::before {
+      top: 0;
+    }
+  
+    &::after {
+      top: calc(100% - 2px);
+    }
+
+  }
+  
+
+  $sx: 560;
+  $sm: 768;
+  $md: 992;
+  $lg: 1200;
+
+  @mixin r($width) {
+    @media (max-width: #{$width}px) {
+      @content;
+     }
   }

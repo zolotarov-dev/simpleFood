@@ -22,20 +22,23 @@
             <div class="container">
 
                 <nav class="menu">
-                    <a class="logo" href="#">
-                        <img class="logo__img" src="images/Logo.svg" width="200" height="39" alt="logo">
-                    </a>
-                    <ul class="menu__lists">
-                        <li class="menu__item">
-                            <a class="menu__link" href="#head">Главная</a>
+                        <a class="logo" href="#">
+                            <img class="logo__img" src="images/Logo.svg" width="200" height="39" alt="logo">
+                        </a>
+
+                    <ul class="menu-top">
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#head">Главная</a>
                         </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#popular">Блюда</a>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#popular">Блюда</a>
                         </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#footer">Контакты</a>
+                        <li class="menu-top__item">
+                            <a class="menu-top__link" href="#footer">Контакты</a>
                         </li>
                     </ul>
+
+
 
                     <ul class="icon-menu">
                         <li class="icon-menu__list">
@@ -50,6 +53,11 @@
                             </button>
                         </li>
                     </ul>
+
+                    <button class="menu__burger" type="button">
+                        <span class="menu__burger__line"></span>
+                        <span class="sr-only">Открыть меню</span>
+                    </button>
                 </nav>
             </div>
         </header>
@@ -238,7 +246,7 @@
                     <div class="stay-home__inner">
                         <div class="stay-home__picture" style="background-image: url(images/food-delivery.png);"></div>
                         <div class="stay-home__content">
-                            <h2 class="stay-home__title">
+                            <h2 class="title stay-home__title">
                                 Оставайтесь дома,
                                 а мы позаботимся о еде
                             </h2>
@@ -266,7 +274,7 @@
                                     </span>
                                 </li>
                             </ul>
-                            <a class="btn" href="#">Подробнее</a>
+                            <a class="btn stay-home__btn" href="#">Подробнее</a>
                         </div>
                     </div>
                 </div>
@@ -274,7 +282,7 @@
 
             <section class="restaurants indent">
                 <div class="container">
-                    <h2 class="restaurants__tittle">Лучшие рестораны</h2>
+                    <h2 class="restaurants__title">Лучшие рестораны</h2>
                     <ul class="restaurants__items">
                         <li class="restaurants__item">
                             <article class="restaurants-card">
@@ -386,7 +394,7 @@
                 <div class="container">
                     <div class="review__slider">
                         <div class="review__item">
-                            <h2 class="review__title">Отзывы клиентов</h2>
+                            <h2 class="title review__title">Отзывы клиентов</h2>
                             <div class="review__content">
                                 <img class="review__img" src="images/dasha.jpg" width="300" height="300"
                                     alt="Фотография Даши">
@@ -401,14 +409,15 @@
                                         Дарья
                                         <span class="review__caption">Ценитель вкусной еды</span>
                                     </figcaption>
-                                    
+
                                 </figure>
                             </div>
                         </div>
                         <div class="review__item">
-                            <h2 class="review__title">Отзывы клиентов</h2>
+                            <h2 class="title review__title">Отзывы клиентов</h2>
                             <div class="review__content">
-                                <img class="review__img" src="images/dasha.jpg" width="300" height="300" alt="Фотография Даши">
+                                <img class="review__img" src="images/dasha.jpg" width="300" height="300"
+                                    alt="Фотография Даши">
                                 <figure class="review__quote">
                                     <blockquote class="review__text">
                                         SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе.
@@ -420,15 +429,16 @@
                                         Дарья
                                         <span class="review__caption">Ценитель вкусной еды</span>
                                     </figcaption>
-                                    
+
                                 </figure>
                             </div>
 
                         </div>
                         <div class="review__item">
-                            <h2 class="review__title">Отзывы клиентов</h2>
+                            <h2 class="title review__title">Отзывы клиентов</h2>
                             <div class="review__content">
-                                <img class="review__img" src="images/dasha.jpg" width="300" height="300" alt="Фотография Даши">
+                                <img class="review__img" src="images/dasha.jpg" width="300" height="300"
+                                    alt="Фотография Даши">
                                 <figure class="review__quote">
                                     <blockquote class="review__text">
                                         SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе.
@@ -440,15 +450,16 @@
                                         Дарья
                                         <span class="review__caption">Ценитель вкусной еды</span>
                                     </figcaption>
-                                    
+
                                 </figure>
                             </div>
 
                         </div>
                         <div class="review__item">
-                            <h2 class="review__title">Отзывы клиентов</h2>
+                            <h2 class="title review__title">Отзывы клиентов</h2>
                             <div class="review__content">
-                                <img class="review__img" src="images/dasha.jpg" width="300" height="300" alt="Фотография Даши">
+                                <img class="review__img" src="images/dasha.jpg" width="300" height="300"
+                                    alt="Фотография Даши">
                                 <figure class="review__quote">
                                     <blockquote class="review__text">
                                         SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе.
@@ -460,7 +471,7 @@
                                         Дарья
                                         <span class="review__caption">Ценитель вкусной еды</span>
                                     </figcaption>
-                                    
+
                                 </figure>
                             </div>
                         </div>
@@ -472,7 +483,7 @@
                 <div class="container">
                     <div class="app__inner">
                         <div class="app__content">
-                            <h2 class="app__title">Скачайте мобильное приложение</h2>
+                            <h2 class="title app__title">Скачайте мобильное приложение</h2>
                             <div class="app__text">
                                 <p>
                                     Рестораны, которые вы любите - в ваших руках. Устанавливайте приложение и
@@ -505,13 +516,15 @@
                 <div class="footer__top">
                     <div class="footer__sub">
                         <a class="logo" href="#">
-                            <img class="logo__img" src="images/Logo.svg" width="200" height="39" alt="logo">
+                            <img class="logo__img footer__images" src="images/Logo.svg" width="200" height="39"
+                                alt="logo">
                         </a>
                         <form class="footer__form" name="form" action="#">
                             <label class="footer__label" for="email">
                                 <span class="sr-only">Введите электроную почту</span>
                             </label>
-                            <input class="footer__input" type="email" id="email" name="email" placeholder="Ваш email" required>
+                            <input class="footer__input" type="email" id="email1" name="email" placeholder="Ваш email"
+                                required>
                             <button class="btn footer__btn" type="submit">
                                 Подписаться
                             </button>
@@ -555,37 +568,37 @@
                             <a href="#" class="footer__link">Карта сайта </a>
                         </li>
                     </ul>
-                    <address class="footer__contacts">
-                        <ul class="footer__items">
-                            <li class="footer__item">
-                                <a href="" class="footer__data location">ул. Т.Г.Шевченко, 1</a>
+                    <address class="contacts">
+                        <ul class="contacts__items">
+                            <li class="contacts__item">
+                                <a class="contacts__data location" href="#">ул. Т.Г.Шевченко, 1</a>
                             </li>
-                            <li class="footer__item">
-                                <a class="footer__data call" href="tel:+380501112233">380501112233</a>
+                            <li class="contacts__item">
+                                <a class="contacts__data call" href="tel:+380501112233">380501112233</a>
                             </li>
-                            <li class="footer__item">
-                                <a class="footer__data message" href="mailto:support@sfood.com">support@sfood.com</a>
+                            <li class="contacts__item">
+                                <a class="contacts__data message" href="mailto:support@sfood.com">support@sfood.com</a>
                             </li>
                         </ul>
-                        <ul class="footer__soc-items">
-                            <li class="footer__icon">
-                                <a href="#" class="footer__icon-link">
+                        <ul class="contacts__soc-items">
+                            <li class="contacts__icon">
+                                <a href="#" class="contacts__icon-link">
                                     <span class="sr-only">Перейти на facebook</span>
-                                    <span class="footer__img"
+                                    <span class="contacts__img"
                                         style="background-image: url(images/sprite.svg#icon-facebook);"></span>
                                 </a>
                             </li>
-                            <li class="footer__icon">
-                                <a href="#" class="footer__icon-link">
+                            <li class="contacts__icon">
+                                <a href="#" class="contacts__icon-link">
                                     <span class="sr-only">Перейти на twitter</span>
-                                    <span class="footer__img"
+                                    <span class="contacts__img"
                                         style="background-image: url(images/sprite.svg#icon-twitter);"></span>
                                 </a>
                             </li>
-                            <li class="footer__icon">
-                                <a href="#" class="footer__icon-link">
+                            <li class="contacts__icon">
+                                <a href="#" class="contacts__icon-link">
                                     <span class="sr-only">Перейти на instagram</span>
-                                    <span class="footer__img"
+                                    <span class="contacts__img"
                                         style="background-image: url(images/sprite.svg#icon-instagram);"></span>
                                 </a>
                             </li>
@@ -597,6 +610,64 @@
                 </div>
             </div>
         </footer>
+
+        <div class="sidebar-nav">
+            <div class="sidebar-nav__head">
+                <a class="logo" href="#">
+                    <img class="logo__img sidebar-nav__img" src="images/Logo.svg" width="200" height="39" alt="logo">
+                </a>
+                <button class="button-close"></button>
+            </div>
+            <div class="sidebar-nav__menu">
+                <ul class="menu-top">
+                    <li class="menu-top__item sidebar-nav__item">
+                        <a class="menu-top__link" href="#head">Главная</a>
+                    </li>
+                    <li class="menu-top__item sidebar-nav__item">
+                        <a class="menu-top__link" href="#popular">Блюда</a>
+                    </li>
+                    <li class="menu-top__item sidebar-nav__item">
+                        <a class="menu-top__link" href="#footer">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <address class="contacts">
+                <ul class="contacts__items">
+                    <li class="contacts__item">
+                        <a href="" class="contacts__data location">ул. Т.Г.Шевченко, 1</a>
+                    </li>
+                    <li class="contacts__item">
+                        <a class="contacts__data call" href="tel:+380501112233">380501112233</a>
+                    </li>
+                    <li class="contacts__item">
+                        <a class="contacts__data message" href="mailto:support@sfood.com">support@sfood.com</a>
+                    </li>
+                </ul>
+                <ul class="contacts__soc-items">
+                    <li class="contacts__icon">
+                        <a href="#" class="contacts__icon-link">
+                            <span class="sr-only">Перейти на facebook</span>
+                            <span class="contacts__img"
+                                style="background-image: url(images/sprite.svg#icon-facebook);"></span>
+                        </a>
+                    </li>
+                    <li class="contacts__icon">
+                        <a href="#" class="contacts__icon-link">
+                            <span class="sr-only">Перейти на twitter</span>
+                            <span class="contacts__img"
+                                style="background-image: url(images/sprite.svg#icon-twitter);"></span>
+                        </a>
+                    </li>
+                    <li class="contacts__icon">
+                        <a href="#" class="contacts__icon-link">
+                            <span class="sr-only">Перейти на instagram</span>
+                            <span class="contacts__img"
+                                style="background-image: url(images/sprite.svg#icon-instagram);"></span>
+                        </a>
+                    </li>
+                </ul>
+            </address>
+        </div>
     </div>
 
     <script src="js/main.min.js"></script>
