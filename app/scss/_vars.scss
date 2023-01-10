@@ -4,94 +4,161 @@ $darkblue: #363853;
 $white: #FFFFFF;
 $orange: #FF7A50;
 $grey: #ECECEC;
-$dark-grey:#C2C2C2;
+$dark-grey: #C2C2C2;
 $bright-white: #F9FAFF;
 $dim-white: #FFF2ED;
 $color-text: #0000;
 $hover-color: #FFAE94;
 $line: #EEEFF3;
+$bread-bg: #FF7A50;
+$bread-color: #505050;
+$input-bg: #FAEDED;
 
-%rubik-300{
-    font-family: 'Rubik';
-    font-weight: 300;
+%rubik-300 {
+  font-family: 'Rubik';
+  font-weight: 300;
 }
 
-%rubik-400{
-    font-family: 'Rubik';
-    font-weight: 400;
+%rubik-400 {
+  font-family: 'Rubik';
+  font-weight: 400;
 }
 
-%rubik-500{
-    font-family: 'Rubik';
-    font-weight: 500;
+%rubik-500 {
+  font-family: 'Rubik';
+  font-weight: 500;
 }
 
-%rubik-italic{
-    font-family: 'Rubik';
-    font-weight: 400;
-    font-style: italic;
+%rubik-italic {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
 }
 
 @mixin line-clamp($lines: 1) {
-    @if $lines <=1 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    } @else {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: $lines;
-      -webkit-box-orient: vertical;
-    }
+  @if $lines <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  @mixin burger-menu {
-    width: 30px;
-    height: 20px;
-    position: relative;
-    color: $bright-white;
-  
-    &__line {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      height: 2px;
-      background-color: $darkblue;
-      transition: transform 0.3s ease-in-out;
-    }
-  
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: $darkblue;
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-    }
-  
-    &::before {
-      top: 0;
-    }
-  
-    &::after {
-      top: calc(100% - 2px);
-    }
-
+  @else {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
   }
-  
+}
 
-  $sx: 560;
-  $sm: 768;
-  $md: 992;
-  $lg: 1200;
+@mixin burger-menu {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  color: $bright-white;
 
-  @mixin r($width) {
-    @media (max-width: #{$width}px) {
-      @content;
-     }
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: $darkblue;
+    transition: transform 0.3s ease-in-out;
   }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $darkblue;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - 2px);
+  }
+
+}
+
+
+$sx: 560;
+$sm: 768;
+$md: 992;
+$lg: 1200;
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin focus-btn {
+  box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  background-color: rgba(255, 122, 80, 0.1);
+  color: $accent;
+}
+
+@mixin hover-btn {
+  box-shadow: 0px 5px 12px rgba(255, 104, 56, 0.2), 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  background-color: $white;
+  color: $accent;
+}
+
+@mixin active-btn {
+  background-color: rgba(255, 122, 80, 0.1);
+  box-shadow: none;
+  color: $accent;
+}
+
+@mixin accent-focus {
+  box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  text-decoration: none;
+  text-decoration-color: $color-text;
+}
+
+@mixin accent-hover {
+  color: $accent;
+  text-decoration: none;
+  text-decoration-color: $color-text;
+}
+
+@mixin accent-active {
+  text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  color: $default-color;
+  box-shadow: none;
+  text-decoration: none;
+  text-decoration-color: $color-text;
+}
+
+@mixin icon-focus {
+  background-color: rgba(255, 122, 80, 0.1);
+  box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+}
+
+@mixin icon-hover {
+  background-color: $orange;
+  box-shadow: none;
+}
+
+@mixin icon-active {
+  background-color: $dim-white;
+}
+
+@mixin card-hover {
+  box-shadow: 0px 0px 0px 1px $accent;
+}

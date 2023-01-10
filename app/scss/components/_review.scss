@@ -1,0 +1,287 @@
+.review {
+    &__slider {
+        max-width: 990px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        margin-bottom: 47px;
+
+        @include r($sx) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 50px;
+        text-align: center;
+
+        @include r($sm) {
+            margin-bottom: 30px;
+        }
+
+    }
+
+    &__content {
+        display: flex;
+
+        @include r($sm) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__img {
+        margin-right: 40px;
+        border-radius: 50%;
+
+        @include r($sm) {
+            margin: 0;
+        }
+
+        @include r($sx) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__quote {
+        padding: 28px 40px 0 40px;
+    }
+
+    &__text {
+        font-style: italic;
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        position: relative;
+
+        @include r($sm) {
+            font-size: 18px;
+        }
+
+        @include r($sx) {
+            font-size: 14px;
+            margin-bottom: 21px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: -1px;
+            left: -40px;
+            background-image: url(../images/sprite.svg#icon-quote-open);
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: invert(82%) sepia(1%) saturate(0%) hue-rotate(349deg) brightness(97%) contrast(87%);
+
+            @include r($sx) {
+                top: -10px;
+                left: -34px;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            bottom: -1px;
+            right: -40px;
+            background-image: url(../images/sprite.svg#icon-quote-close);
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: invert(82%) sepia(1%) saturate(0%) hue-rotate(349deg) brightness(97%) contrast(87%);
+
+            @include r($sx) {
+                bottom: 9px;
+                right: -34px;
+            }
+        }
+
+    }
+
+
+    &__author {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.3;
+        color: $accent;
+
+        @include r($sx) {
+            font-size: 16px;
+        }
+    }
+
+    &__caption {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: $default-color;
+        padding-top: 16px;
+
+        @include r($sx) {
+            padding-top: 11px;
+        }
+    }
+
+    .slick-arrow {
+        position: absolute;
+        font-size: 0;
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+        bottom: -12px;
+        z-index: 5;
+        transition: box-shadow 0.3s, border 0.3s, background-color 0.3s;
+        border: 3px solid $orange;
+
+        @include r($sm) {
+            display: none;
+            bottom: 0;
+            top: 30%;
+        }
+
+        @include r($sx) {
+            top: 91px;
+        }
+
+        &:focus {
+            outline: transparent;
+            box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+            border: 3px solid transparent;
+        }
+
+        &:hover {
+            background-color: $dim-white;
+            border: 3px solid $hover-color;
+            box-shadow: none;
+
+            &::before {
+                filter: invert(87%) sepia(23%) saturate(1578%) hue-rotate(302deg) brightness(106%) contrast(100%);
+            }
+        }
+
+        &:active {
+            background-image: $dim-white;
+            border: 3px solid $dim-white;
+            box-shadow: none;
+
+            &::before {
+                filter: invert(64%) sepia(11%) saturate(6257%) hue-rotate(325deg) brightness(100%) contrast(102%);
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            top: 8px;
+            left: 8px;
+            filter: invert(65%) sepia(84%) saturate(2557%) hue-rotate(326deg) brightness(101%) contrast(102%);
+            transition: filter 0.3s;
+        }
+    }
+
+    .slick-disabled{
+        border: 3px solid $dark-grey;
+
+        &::before {
+            filter: invert(82%) sepia(1%) saturate(0%) hue-rotate(349deg) brightness(97%) contrast(87%);
+        }
+    }
+
+    .slick-prev {
+        left: 39%;
+
+        @include r($md) {
+            left: 36%;
+        }
+
+        @include r($sm) {
+            left: 10%;
+        }
+
+        &::before {
+            background-image: url(../images/sprite.svg#icon-left);
+        }
+    }
+
+    .slick-next {
+        right: 38%;
+
+        @include r($md) {
+            right: 36%;
+        }
+
+        @include r($sm) {
+            right: 10%;
+        }
+
+        &::before {
+            background-image: url(../images/sprite.svg#icon-right);
+        }
+    }
+
+    .btn-active {
+        
+    }
+
+
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+
+        @include r($sm) {
+            display: none;
+        }
+
+        li {
+            button {
+                padding: 0;
+                font-size: 0;
+                background-color: transparent;
+                width: 15px;
+                height: 15px;
+                background-color: $dark-grey;
+                border-radius: 50%;
+                transition: box-shadow 0.3s, background-color 0.3s;
+
+                @include r($sm) {
+                    display: none;
+                }
+
+                &:focus {
+                    background-color: $dark-grey;
+                    box-shadow: 0px 0px 0px 2px $accent;
+                }
+
+                &:hover {
+                    background-color: $dim-white;
+                    box-shadow: 0px 0px 0px 2px rgba(255, 122, 80, 0.7);
+                }
+
+                &:active {
+                    box-shadow: none;
+                    background-color: $hover-color;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    background-color: $orange;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.products-card {
+
+    &__img {
+        margin: 0 auto 9px;
+    }
+
+    &__title {
+        font-size: 15px;
+        line-height: 1.2;
+        text-align: center;
+        min-height: 36px;
+        margin-bottom: 14px;
+        @include line-clamp(2);
+    }
+
+    &__price {
+        display: block;
+        text-align: center;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 7px;
+    }
+
+    &__btn {
+        display: block;
+        margin: 0 auto;
+        padding: 7px 16px;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+}

@@ -1,0 +1,45 @@
+.select2-results__option {
+    padding: 15px 41px 15px 15px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.select2 {
+    
+    .select2-container {
+        
+        &*:focus {
+            outline: none;
+        }
+    }
+
+    .select2-selection--single {
+        height: auto;
+
+        &:focus {
+            border: 1px solid $accent;
+        }
+
+        &:hover {
+            border: 1px solid $accent;
+        }
+
+        .select2-selection__rendered {
+            padding: 15px 41px 15px 15px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.2;
+            z-index: 2;
+            position: relative;
+
+            &:hover {
+                color: $accent;
+            }
+
+            @include r($sm) {
+                padding: 15px 38px 14px 10px;
+
+            }
+        }
+    }
+}

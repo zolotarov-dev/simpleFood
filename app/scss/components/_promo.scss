@@ -1,0 +1,14 @@
+.promo{
+    &__text{
+        font-size: 24px;
+        @include line-clamp(2);
+    }
+
+    &__title{
+        margin-bottom: 60px;
+        @include r($sm) {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+}

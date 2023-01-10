@@ -1,0 +1,43 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @include r($lg) {
+        gap: 20px;
+    }
+
+    @include r($md) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include r($sm) {
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include r($sx) {
+        gap: 10px 5px;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        max-width: 210px;
+        width: 100%;
+        padding: 20px 15px;
+        background-color: $white;
+        box-shadow: 0px 0px 0px 1px $grey;
+        border-radius: 5px;
+        transition: box-shadow 0.3s;
+
+        &:hover {
+            @include card-hover;
+        }
+
+        @include r($sx) {
+            padding: 20px 10px;
+        }
+    }
+}

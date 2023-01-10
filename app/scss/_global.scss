@@ -115,8 +115,9 @@ body {
 .sidebar-nav {
     display: none;
     position: relative;
+
     &::after,
-    &::before{
+    &::before {
         content: '';
         position: absolute;
         top: 89px;
@@ -126,7 +127,7 @@ body {
         width: 100%;
     }
 
-    &::before{
+    &::before {
         top: 245px;
     }
 
@@ -160,49 +161,15 @@ body {
         padding: 25px 0;
     }
 
-    .button-close {
-        display: block;
-        width: 22px;
-        height: 22px;
-        position: relative;
-
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: $darkblue;
-            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-        }
-
-        &::before {
-            top: 0;
-        }
-
-        &::after {
-            top: calc(100% - 1px);
-        }
-
-        &::before {
-            transform: rotate(45deg);
-            top: 50%;
-            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-        }
-
-        &::after {
-            transform: rotate(-45deg);
-            top: 50%;
-            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-        }
-
-    }
-
     &__menu {
         padding: 25px 0;
         width: 100%;
         margin-bottom: 15px;
+    }
+
+    &__items {
+        left: 0;
+        position: static;
     }
 
     &__item:not(:last-child) {
@@ -232,6 +199,19 @@ body {
         line-height: 2;
         white-space: nowrap;
         border-radius: 5px;
+
+        &:focus {
+            @include accent-focus;
+            text-decoration: underline;
+        }
+
+        &:hover {
+            @include accent-hover;
+        }
+
+        &:active {
+            @include accent-active;
+        }
     }
 
     &__data::before {
@@ -250,11 +230,11 @@ body {
         }
     }
 
-    &__data:hover::before{
+    &__data:hover::before {
         filter: invert(47%) sepia(83%) saturate(1398%) hue-rotate(337deg) brightness(101%) contrast(101%);
     }
 
-    &__data:active::before{
+    &__data:active::before {
         filter: drop-shadow(2px 2px 5px rgba(49, 53, 43, 0.5)) invert(9%) sepia(4%) saturate(5688%) hue-rotate(32deg) brightness(88%) contrast(71%);
     }
 
@@ -286,6 +266,18 @@ body {
         background-color: $grey;
         transition: box-shadow 0.3s, background-color 0.3s;
 
+        &:focus {
+            @include icon-focus;
+        }
+
+        &:hover {
+            @include icon-hover;
+        }
+
+        &:active {
+            @include icon-active;
+        }
+
         &:hover .contacts__img {
             filter: invert(100%) sepia(10%) saturate(7452%) hue-rotate(181deg) brightness(107%) contrast(92%);
         }
@@ -312,93 +304,164 @@ body {
     border-radius: 6px;
     color: $white;
     transition: box-shadow 0.3s, color 0.3s, box-shadow 0.3s, background-color 0.3s;
+
+    &:focus {
+        @include focus-btn;
+    }
+
+    &:hover {
+        @include hover-btn;
+    }
+
+    &:active {
+        @include active-btn;
+    }
 }
 
-.btn:focus,
-.restaurants-card__btn:focus {
-    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-    background-color: rgba(255, 122, 80, 0.1);
-    color: $accent;
+.mobile-btn {
+    display: none;
+    position: relative;
+    background-color: $input-bg;
+    width: 47px;
+    height: 47px;
+    margin-right: 10px;
+    border-radius: 3px;
+
+    &::after {
+        @include pseudo;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+        width: 32px;
+        height: 34px;
+        background-image: url(../images/sprite.svg#mobile-btn);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    @include r($sm) {
+        display: block;
+
+    }
 }
 
-.btn:hover,
-.restaurants-card__btn:hover {
-    box-shadow: 0px 5px 12px rgba(255, 104, 56, 0.2), 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-    background-color: $white;
-    color: $accent;
+.button-close {
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $darkblue;
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        top: calc(100% - 1px);
+    }
+
+    &::before {
+        transform: rotate(45deg);
+        top: 50%;
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+        top: 50%;
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
 
 }
 
-.btn:active,
-.restaurants-card__btn:active {
-    background-color: rgba(255, 122, 80, 0.1);
-    box-shadow: none;
-    color: $accent;
-}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
 
-.restaurants-card__btn:focus::before,
-.restaurants-card__btn:hover::before,
-.restaurants-card__btn:active::before {
-    filter: invert(51%) sepia(90%) saturate(2286%) hue-rotate(337deg) brightness(101%) contrast(101%);
-}
+    &__items:nth-child(3),
+    &__items:nth-child(5) {
+        @include r($sm) {
+            display: none;
+        }
+    }
 
-.restaurants-card__btn:hover::before {
-    left: 53px;
-}
+    &__link {
+        display: block;
+        width: 100%;
+        width: 48px;
+        height: 48px;
+        border-radius: 3px;
+        background-color: $input-bg;
+        line-height: 1;
+        text-align: center;
+        padding: 15px 0;
 
-.restaurants-card__btn:active::before {
-    left: 33px;
-}
+        &:focus {
+            border: none;
+            box-shadow: 0px 0px 0px 2px $accent;
+            background: $input-bg;
+        }
 
-.menu-top__link:focus,
-.hero__link:focus,
-.popular__more:focus,
-.footer__link:focus,
-.contacts__data:focus {
-    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-    text-decoration: none;
-    text-decoration-color: $color-text;
-}
+        &:hover {
+            border: none;
+            background-color: $accent;
+            color: $white;
 
-.menu-top__link:hover,
-.hero__link:hover,
-.popular__more:hover,
-.footer__link:hover,
-.contacts__data:hover {
-    color: $accent;
-    text-decoration: none;
-    text-decoration-color: $color-text;
-}
+        }
 
-.popular__more:focus {
-    text-decoration: underline;
-}
+        &:active {
+            border: none;
+            background-color: $input-bg;
+            box-shadow: inset 0px -1px 4px 2px rgba(0, 0, 0, 0.15);
+        }
 
-.menu-top__link:active,
-.hero__link:active,
-.popular__more:active,
-.footer__link:active,
-.contacts__data:active {
-    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
-    color: $default-color;
-    box-shadow: none;
-    text-decoration: none;
-    text-decoration-color: $color-text;
-}
+    }
 
-.icon-menu__btn:focus,
-.contacts__icon-link:focus {
-    background-color: rgba(255, 122, 80, 0.1);
-    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-}
+    &__link--arrow {
+        position: relative;
 
-.icon-menu__btn:hover,
-.contacts__icon-link:hover {
-    background-color: $orange;
-    box-shadow: none
-}
+        &::after {
+            @include pseudo;
+            background-image: url(../images/sprite.svg#pagin-arrow);
+            width: 11px;
+            height: 18px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 18px;
+        }
 
-.icon-menu__btn:active,
-.contacts__icon-link:active {
-    background-color: $dim-white;
+        &:hover::after {
+            filter: invert(78%) sepia(100%) saturate(0%) hue-rotate(214deg) brightness(108%) contrast(105%);
+        }
+
+
+    }
+
+    &__link--arrow-prev {
+        transform: rotate(-180deg);
+    }
+
+    &__link--disabled::after {
+        filter: invert(82%) sepia(0%) saturate(0%) hue-rotate(59deg) brightness(94%) contrast(97%);
+    }
+
+    &__link--active {
+        border: 1px solid $darkblue;
+    }
+
 }

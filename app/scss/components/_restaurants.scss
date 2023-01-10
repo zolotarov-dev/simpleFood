@@ -1,0 +1,113 @@
+.restaurants {
+
+    &__title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 1.2;
+
+        @include r($sm) {
+            font-size: 24px;
+            margin-bottom: 31px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        gap: 30px;
+
+        @include r($lg) {
+            justify-content: space-around;
+        }
+
+        @include r($md) {
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        @include r($sm) {
+            display: block;
+            justify-content: center;
+            max-width: 345px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .slick-list {
+            max-width: 345px;
+            margin: 0 auto 30px;
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+
+            @include r($sm) {
+                margin: 0 auto 24px;
+            }
+
+            &:hover {
+                box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
+            }
+        }
+
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            li {
+                button {
+                    padding: 0;
+                    font-size: 0;
+                    background-color: transparent;
+                    width: 15px;
+                    height: 15px;
+                    background-color: $dark-grey;
+                    border-radius: 50%;
+                    transition: box-shadow 0.3s, background-color 0.3s;
+
+                    &:focus {
+                        background-color: $dark-grey;
+                        box-shadow: 0px 0px 0px 2px $accent;
+                    }
+
+                    &:hover {
+                        background-color: $dim-white;
+                        box-shadow: 0px 0px 0px 2px rgba(255, 122, 80, 0.7);
+                    }
+
+                    &:active {
+                        box-shadow: none;
+                        background-color: $hover-color;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: $orange;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        border-radius: 10px;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+        background-color: $white;
+        transition: box-shadow 0.3s;
+
+        @include r($sm) {
+            box-shadow: none;
+            max-width: 345px;
+        }
+
+        &:hover {
+            box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
+
+            @include r($sm) {
+                box-shadow: none;
+            }
+        }
+    }
+}

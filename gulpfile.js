@@ -7,6 +7,7 @@ const imagemin = require('gulp-imagemin');
 const svgSprite = require('gulp-svg-sprite');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const fileinclude = require('gulp-file-include');
 
 function browsersync(){
     browserSync.init({
@@ -35,6 +36,8 @@ function scripts() {
         'node_modules/slick-carousel/slick/slick.js',
         'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
         'node_modules/mixitup/dist/mixitup.js',
+        'node_modules/select2/dist/js/select2.js',
+        'node_modules/nouislider/dist/nouislider.js',
         'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -83,6 +86,16 @@ function build(){
     .pipe(dest('dist'))
 }
 
+const htmlInclude = () => {
+  return src(['app/html/*.html']) 
+  .pipe(fileinclude({
+    prefix: '@',
+    basepath: '@file',
+  }))
+  .pipe(dest('app'))
+  .pipe(browserSync.stream());
+}
+
 function cleanDist() {
     return del('dist')
 }
@@ -92,6 +105,7 @@ function watching() {
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/images/icons/*.svg'], svgSprites);
     watch(['app/**/*.html']).on('change', browserSync.reload);
+    watch(['app/html/**/*.html'], htmlInclude);
 }
   
   exports.styles = styles;
@@ -101,6 +115,7 @@ function watching() {
   exports.images = images;
   exports.cleanDist = cleanDist;
   exports.svgSprites = svgSprites;
+  exports.htmlInclude = htmlInclude;
   exports.build = series(cleanDist, images, build);
 
-  exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);
+  exports.default = parallel(htmlInclude, svgSprites, styles, scripts, browsersync, watching);

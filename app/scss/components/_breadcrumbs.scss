@@ -1,0 +1,56 @@
+.breadcrumbs{
+    background: rgba($bread-bg, 0.1);
+    
+
+    &__list{
+        display: flex;
+        align-items: center;
+    }
+
+    &__item{
+        position: relative;
+        padding: 20px 0;
+
+        &:not(:last-child){
+            margin-right: 17px;
+
+            &::after{
+                @include pseudo;
+                background-image: url(../images/sprite.svg#chevron);
+                width: 6px;
+                height: 10px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: -10px;
+            }
+        }
+
+        
+    }
+
+    &__link{
+        font-size: 14px;
+        color: $bread-color;
+        letter-spacing: 0.03em;
+        border-radius: 5px;
+        
+
+    }
+
+    &__link--active{
+        &:focus{
+            @include accent-focus;
+        }
+
+        &:hover{
+            @include accent-hover;
+        }
+    
+        &:active{
+            @include accent-active;
+        }
+    }
+}
