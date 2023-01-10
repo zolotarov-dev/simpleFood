@@ -4,7 +4,9 @@
 
 <main class="main">
 
-    @include('components/_breadcrumbs.html')
+    @include('components/_breadcrumbs.html', {
+        "bread" : '<li class="breadcrumbs__item"><span class="breadcrumbs__link">Каталог товаров</span></li>'
+    })
 
     @include('components/_products-catalog.html')
 
