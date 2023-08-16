@@ -133,6 +133,78 @@
     </div>
 </div>
 
+    <div class="product-about">
+    <div class="container">
+        <div class="product-about__main">
+            <ul class="product-about__slider">
+                <li class="product-about__item">
+                    <img class="product-about__img" src="images/burger-card.jpg" alt="">
+                </li>
+                <li class="product-about__item">
+                    <img class="product-about__img" src="images/burger-card.jpg" alt="">
+                </li>
+                <li class="product-about__item">
+                    <img class="product-about__img" src="images/burger-card.jpg" alt="">
+                </li>
+            </ul>
+            <div class="product-about__content">
+                <h1 class="product-about__title title">Чизбургер с листьями салата</h1>
+                <div class="star"></div>
+                <span class="product-about__price">160 <span class="product-about__currency">грн.</span> </span>
+                <form class="qty-input" action="">
+                    <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                    <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                    <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                    <button class="product-about__btn">Добавить в корзину</button>
+                </form>
+                <h2 class="product-about__subject">Доставка и оплата</h2>
+                <ul class="product-about__list">
+                    <li class="product-about__desc">
+                        Минимальная сумма заказа — 160 грн.
+                    </li>
+                    <li class="product-about__desc">
+                        Время доставки заказа — 80-140 мин.
+                    </li>
+                    <li class="product-about__desc">
+                        Оплата осуществляется только банковской картой.
+                    </li>
+                    <li class="product-about__desc">
+                        Окончательная сумма заказа формируется после сбора товаров.
+                    </li>
+                </ul>
+                <a class="product-about__btn-link" href="#">Подробнее</a>
+
+            </div>
+        </div>
+        <div class="product-about__tabs">
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'Описание')">Описание</button>
+                <button class="tablinks" onclick="openCity(event, 'Характеристики')">Характеристики</button>
+                <button class="tablinks" onclick="openCity(event, 'Отзывы')">Отзывы</button>
+            </div>
+
+            <div id="London" class="tabcontent">
+                <h3>Описание</h3>
+                <p>Рубленый бифштекс из натуральной говядины на карамелизованной булочке, с ломтиком сыра «Чеддер»,
+                    кетчупом, горчицей, луком и маринованными огурчиками.
+                    Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо, следы кунжута
+                    Внешний вид товара может отличаться от изображений, представленных на сайте.</p>
+            </div>
+
+            <div id="Характеристики" class="tabcontent">
+                <h3>Характеристики</h3>
+                <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Отзывы" class="tabcontent">
+                <h3>Отзывы</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
    
 
 </main>

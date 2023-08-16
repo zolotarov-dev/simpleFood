@@ -15,6 +15,7 @@
 
     &__items {
         display: flex;
+        flex-wrap: wrap;
         gap: 30px;
 
         @include r($lg) {
